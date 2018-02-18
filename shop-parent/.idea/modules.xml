@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/shop-common/shop-common.iml" filepath="$PROJECT_DIR$/shop-common/shop-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-manager/shop-manager.iml" filepath="$PROJECT_DIR$/shop-manager/shop-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-manager/shop-manager-mapper/shop-manager-mapper.iml" filepath="$PROJECT_DIR$/shop-manager/shop-manager-mapper/shop-manager-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-manager/shop-manager-pojo/shop-manager-pojo.iml" filepath="$PROJECT_DIR$/shop-manager/shop-manager-pojo/shop-manager-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-manager/shop-manager-service/shop-manager-service.iml" filepath="$PROJECT_DIR$/shop-manager/shop-manager-service/shop-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-manager/shop-manager-web/shop-manager-web.iml" filepath="$PROJECT_DIR$/shop-manager/shop-manager-web/shop-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-parent.iml" filepath="$PROJECT_DIR$/shop-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-portal/shop-portal.iml" filepath="$PROJECT_DIR$/shop-portal/shop-portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-rest/shop-rest.iml" filepath="$PROJECT_DIR$/shop-rest/shop-rest.iml" />
+    </modules>
+  </component>
+</project>
