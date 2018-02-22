@@ -6,6 +6,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.http.converter.json.MappingJacksonValue;
 
 
 public class JsonUtils {
@@ -65,6 +66,16 @@ public class JsonUtils {
         }
 
         return null;
+    }
+
+    public static Object jsonpResponse(String callback, ShopResponse shopResponse){
+        if (!StringUtils.isNullOrEmpty(callback)) {
+            MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(shopResponse);
+            mappingJacksonValue.setJsonpFunction(callback);
+            return mappingJacksonValue;
+        } else {
+            return shopResponse;
+        }
     }
 
 }

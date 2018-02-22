@@ -12,6 +12,8 @@
         <module>shop-manager</module>
         <module>shop-rest</module>
         <module>shop-portal</module>
+        <module>shop-search</module>
+        <module>shop-sso</module>
     </modules>
     <packaging>pom</packaging>
 

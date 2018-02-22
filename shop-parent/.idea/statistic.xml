@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Statistic">
+    <option name="excludedDirectories">
+      <list>
+        <option value="$PROJECT_DIR$/shop-common" />
+        <option value="$PROJECT_DIR$/shop-manager/shop-manager-mapper/src/main/java/com/shop/mapper" />
+        <option value="$PROJECT_DIR$/shop-manager/shop-manager-pojo" />
+      </list>
+    </option>
+  </component>
+</project>

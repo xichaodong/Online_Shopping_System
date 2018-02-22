@@ -1,0 +1,3 @@
+com\shop\sso\dao\JedisCilent.class
+com\shop\sso\dao\impl\JedisClientSingle.class
+com\shop\sso\dao\impl\JedisClientCluster.class

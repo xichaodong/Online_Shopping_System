@@ -4,6 +4,8 @@
     <file type="web" url="file://$PROJECT_DIR$/shop-manager/shop-manager-web" />
     <file type="web" url="file://$PROJECT_DIR$/shop-portal" />
     <file type="web" url="file://$PROJECT_DIR$/shop-rest" />
+    <file type="web" url="file://$PROJECT_DIR$/shop-search" />
+    <file type="web" url="file://$PROJECT_DIR$/shop-sso" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

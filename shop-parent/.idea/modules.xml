@@ -11,6 +11,8 @@
       <module fileurl="file://$PROJECT_DIR$/shop-parent.iml" filepath="$PROJECT_DIR$/shop-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-portal/shop-portal.iml" filepath="$PROJECT_DIR$/shop-portal/shop-portal.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-rest/shop-rest.iml" filepath="$PROJECT_DIR$/shop-rest/shop-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-search/shop-search.iml" filepath="$PROJECT_DIR$/shop-search/shop-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-sso/shop-sso.iml" filepath="$PROJECT_DIR$/shop-sso/shop-sso.iml" />
     </modules>
   </component>
 </project>
