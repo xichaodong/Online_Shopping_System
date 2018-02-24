@@ -1,9 +1,6 @@
 package com.shop.sso.service.impl;
 
-import com.shop.common.utils.CollectionUtils;
-import com.shop.common.utils.JsonUtils;
-import com.shop.common.utils.ShopResponse;
-import com.shop.common.utils.StringUtils;
+import com.shop.common.utils.*;
 import com.shop.mapper.UserMapper;
 import com.shop.pojo.User;
 import com.shop.pojo.UserExample;
@@ -14,6 +11,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -29,6 +28,8 @@ public class UserServiceImpl implements UserService {
     private String REDIS_USER_SESSION_KEY;
     @Value("${SSO_SESSION_EXPIRE}")
     private Integer SSO_SESSION_EXPIRE;
+    @Value("${COOKIE_NAME}")
+    private String COOKIE_NAME;
 
     //TODO 替换Enum
     @Override
@@ -61,7 +62,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ShopResponse userLogin(String username, String password) {
+    public ShopResponse userLogin(String username, String password, HttpServletRequest request, HttpServletResponse response) {
         UserExample example = new UserExample();
         UserExample.Criteria criteria = example.createCriteria();
         criteria.andUsernameEqualTo(username);
@@ -71,7 +72,7 @@ public class UserServiceImpl implements UserService {
         }
 
         User user = userList.get(0);
-        if (!DigestUtils.md5DigestAsHex(user.getPassword().getBytes()).equals(user.getPassword())) {
+        if (!DigestUtils.md5DigestAsHex(password.getBytes()).equals(user.getPassword())) {
             return ShopResponse.build(400, "密码错误");
         }
 
@@ -79,7 +80,7 @@ public class UserServiceImpl implements UserService {
         user.setPassword(null);
         jedisClientCluster.set(REDIS_USER_SESSION_KEY + ":" + token, JsonUtils.objectToJson(user));
         jedisClientCluster.expire(REDIS_USER_SESSION_KEY + ":" + token, SSO_SESSION_EXPIRE);
-
+        CookieUtils.setCookie(request, response, COOKIE_NAME, token);
         return ShopResponse.ok(token);
     }
 

@@ -7,12 +7,14 @@ import com.shop.common.utils.StringUtils;
 import com.shop.pojo.User;
 import com.shop.sso.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("/user")
@@ -63,9 +65,9 @@ public class UserController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public ShopResponse userLogin(String username, String password) {
+    public ShopResponse userLogin(String username, String password, HttpServletRequest request, HttpServletResponse response) {
         try{
-            return userService.userLogin(username, password);
+            return userService.userLogin(username, password, request, response);
         }catch (Exception e){
             return ShopResponse.build(400, ExceptionUtil.getStackTrace(e));
         }
