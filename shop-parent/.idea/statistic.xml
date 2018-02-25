@@ -3,8 +3,7 @@
   <component name="Statistic">
     <option name="excludedDirectories">
       <list>
-        <option value="$PROJECT_DIR$/shop-common" />
-        <option value="$PROJECT_DIR$/shop-manager/shop-manager-mapper/src/main/java/com/shop/mapper" />
+        <option value="$PROJECT_DIR$/shop-manager/shop-manager-mapper" />
         <option value="$PROJECT_DIR$/shop-manager/shop-manager-pojo" />
       </list>
     </option>

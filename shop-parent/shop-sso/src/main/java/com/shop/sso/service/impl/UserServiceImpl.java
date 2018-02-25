@@ -28,8 +28,8 @@ public class UserServiceImpl implements UserService {
     private String REDIS_USER_SESSION_KEY;
     @Value("${SSO_SESSION_EXPIRE}")
     private Integer SSO_SESSION_EXPIRE;
-    @Value("${COOKIE_NAME}")
-    private String COOKIE_NAME;
+    @Value("${COOKIE_SHOP_NAME}")
+    private String COOKIE_SHOP_NAME;
 
     //TODO 替换Enum
     @Override
@@ -80,7 +80,7 @@ public class UserServiceImpl implements UserService {
         user.setPassword(null);
         jedisClientCluster.set(REDIS_USER_SESSION_KEY + ":" + token, JsonUtils.objectToJson(user));
         jedisClientCluster.expire(REDIS_USER_SESSION_KEY + ":" + token, SSO_SESSION_EXPIRE);
-        CookieUtils.setCookie(request, response, COOKIE_NAME, token);
+        CookieUtils.setCookie(request, response, COOKIE_SHOP_NAME, token);
         return ShopResponse.ok(token);
     }
 
